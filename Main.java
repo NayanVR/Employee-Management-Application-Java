@@ -17,6 +17,10 @@ class Main {
             System.out.println("2. Hourly Employee");
             System.out.print("3. Commission Employee : ");
             int choice = sc.nextInt();
+            if(choice > 3 || choice < 1) {
+                i--;
+                continue;
+            }
             employees.add(createEmployee(sc, choice));
         }
 
