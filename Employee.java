@@ -40,6 +40,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee " + this.id + ": " + this.lastName + ", " + this.firstName;
+        return "\n\nEmployee " + this.id + ": " + this.lastName + ", " + this.firstName;
     }
 }

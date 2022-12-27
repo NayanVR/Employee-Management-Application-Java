@@ -8,6 +8,11 @@ class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        // title
+        System.out.println("=========================================");
+        System.out.println("\n\tEmployee Management System\t\n");
+        System.out.println("=========================================");
+
         while (true) {
             System.out.println("\n\n");
             System.out.println("1. Add new employees");
