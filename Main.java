@@ -8,31 +8,38 @@ class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the number of employees: ");
-        int numEmployees = sc.nextInt();
-
-        for (int i = 0; i < numEmployees; i++) {
-            System.out.println("\nEmployee data for employee " + (i + 1) + " of " + numEmployees);
-            System.out.println("1. Salary Employee");
-            System.out.println("2. Hourly Employee");
-            System.out.print("3. Commission Employee : ");
-            int choice = sc.nextInt();
-            employees.add(createEmployee(sc, choice));
-        }
-
         while (true) {
-            System.out.println("\n\n\n");
-            System.out.println("1. Employee Listing");
-            System.out.println("2. Payroll Listing");
-            System.out.print("3. Exit : ");
+            System.out.println("\n\n");
+            System.out.println("1. Add new employees");
+            System.out.println("2. Employee Listing");
+            System.out.println("3. Payroll Listing");
+            System.out.print("4. Exit : ");
+
             int choice = sc.nextInt();
 
             if (choice == 1) {
+                int flag = 0;
+
+                while (flag == 0) {
+                    System.out.println("\nEmployee data for employee " + (employees.size() + 1));
+                    System.out.println("1. Salary Employee");
+                    System.out.println("2. Hourly Employee");
+                    System.out.print("3. Commission Employee : ");
+                    int empChoice = sc.nextInt();
+                    employees.add(createEmployee(sc, empChoice));
+
+                    System.out.print("Do you want to add another employee? (y/n) : ");
+                    String answer = sc.next();
+                    if (answer.equals("n")) {
+                        flag = 1;
+                    }
+                }
+            } else if (choice == 2) {
                 System.out.println("\n\n");
                 System.out.println("Employee Listing");
                 System.out.println("================");
                 employeeListing();
-            } else if (choice == 2) {
+            } else if (choice == 3) {
                 System.out.println("\n\n");
                 System.out.println("Employee Payroll");
                 System.out.println("================");
