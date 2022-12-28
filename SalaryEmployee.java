@@ -22,6 +22,6 @@ public class SalaryEmployee extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + "\n Salary: $" + salary;
+        return super.toString() + " | Salary: $" + salary;
     }
 }
